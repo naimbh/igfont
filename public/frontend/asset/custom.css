@@ -1,0 +1,111 @@
+:root {
+    --default-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    --default-border-radius: 2px;
+}
+
+#logo {
+    /*margin-top: -14px !important;*/
+    width: 280px;
+}
+
+#logo-cont {
+    display: block;
+    width: 250px;
+    margin: auto;
+}
+
+@media only screen and (max-width: 850px) {
+    #logo {
+        max-height: 80px;
+        width: 240px;
+    }
+}
+
+.content-box {
+    border-radius: 8px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.naim {
+    cursor: pointer;
+    background-color: #f7f5f5;
+    box-shadow: var(--default-box-shadow);
+    border-radius: var(--default-border-radius);
+    padding: 15px;
+    height: fit-content;
+    position: relative;
+    margin-bottom:-16px;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+.naim::-webkit-scrollbar {
+    height: 5px;
+    cursor: pointer !important;
+    border-radius: 5px;
+    padding: 30px;
+}
+
+.naim::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+}
+
+.copy {
+    position: absolute;
+    bottom: 6px;
+    right: 0;
+    width: 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    cursor: pointer !important;
+    display: none;
+}
+
+.naim:hover {
+    background-color: #e0dddd;
+    /*transition: all .3s;*/
+}
+
+
+#loadMore {
+    text-align: center;
+    margin-top: 18px;
+}
+
+#loadMore button {
+    padding: 10px;
+}
+
+/*capiton page*/
+#caption-btn button {
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#capBtn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: 3rem;
+    background: #4CFF4C;
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    box-shadow: 2px 6px 17px -10px rgba(0, 0, 0, 0.75);
+}
+
+footer a{
+    color: white;
+    padding: 10px;
+    text-outline: none;
+}

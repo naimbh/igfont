@@ -1,0 +1,247 @@
+
+body * {
+    font-family: 'Open Sans', sans-serif;
+    color: #222;
+}
+
+body {
+    background: #eee;
+}
+
+#background {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*background-image: url(../i.imgur.com/3Uxnz1A.jpg);*/
+}
+
+#main {
+    margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.content-box {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    margin-top: 1em;
+    background: white;
+}
+
+#input {
+    resize: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    font-size: 1.4em;
+}
+
+#input-wrapper {
+    height: 15em;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+#output-wrapper {
+    height: fit-content;
+    padding: 1em;
+}
+
+#output {
+    font-size: 1.4em;
+    word-break: break-word;
+}
+
+#description p:last-child {
+    margin-bottom: 0;
+}
+
+#description h1:first-child {
+    margin-top: 0;
+}
+
+#logo {
+    text-align: center;
+    font-size: 5.5vw;
+    font-family: 'Pacifico', cursive;
+    color: white;
+    text-shadow: 0 1px 2px #444;
+    margin-top: 0.1em;
+    margin-bottom: 0.6em;
+}
+
+#description *:not(pre) > code {
+    background: #f1f1f1;
+    font-family: monospace;
+    font-size: 1.1em;
+    padding: 0.3em;
+}
+
+#description pre {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.5em;
+    background: #f1f1f1;
+    font-family: monospace;
+}
+
+@media only screen and (max-width: 850px) {
+    #logo {
+        font-size: 10.5vw;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    #output {
+        font-size: 1em;
+    }
+}
+
+#menuToggle {
+    /*display: block;*/
+    position: absolute;
+    top: 40px;
+    right: 34px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#menuToggle a {
+    text-decoration: none;
+    color: #232323;
+    transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+    color: tomato;
+}
+
+
+#menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+}
+
+/*
+* Just a quick hamburger
+*/
+#menuToggle span {
+    display: block;
+    width: 33px;
+    height: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #4d4d4d;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+/*
+* Transform all the slices of hamburger
+* into a crossmark.
+*/
+#menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+}
+
+/*
+* But let's hide the middle one.
+*/
+#menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+* Ohyeah and the last one should go the other direction
+*/
+#menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+* Make this absolute positioned
+* at the top left of the screen
+*/
+#menu {
+    position: absolute;
+    width: 100px;
+    margin: -100px 0 0 -191px;
+    /* margin: -100px 0 0 -50px; */
+    padding: 80px;
+    padding-top: 125px;
+    background: grey;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(165%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+#menu li {
+    padding: 10px 0;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-left: -43px;
+}
+
+/*
+* And let's slide it in from the left
+*/
+#menuToggle input:checked ~ ul {
+    transform: none;
+}
+
+
+/* Style inputs */
+input[type=text], input[type=email], select, subject, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
